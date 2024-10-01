@@ -1,0 +1,432 @@
+/*Google fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --main-color: #00eeff;
+    --text-color: #ffff;
+    --bg-color-01: #1f242d;
+    --bg-color-02: #323946;
+    --color-00: #0000001a;
+    --color-01: #999999;
+    --color-02: #009539;
+    --color-03: #7950f2;
+    --color-04: #c00000;
+    --color-05: #232323;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth; /*chat*/
+}
+
+body {
+    background-color: var(--bg-color-01);
+    color: var(--text-color);
+    margin: 0; /* Remove margem padrão do body */
+    padding-top: 4rem; /* Compensa a altura do header fixo */
+}
+
+header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.1rem;
+    background-color: var(--bg-color-01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave para destaque */
+    transition: background-color 0.3s ease; /* Transição suave para mudanças de cor */
+    border: solid 1px var(--bg-color-01);
+}
+
+.logo {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.nav-responsive {
+    width: 100px;
+    height: 100px;
+    margin-top: auto;
+    position: absolute;
+    top:100px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+    border: solid 0px var(--bg-color-01); 
+
+}
+
+.nav a, .nav-responsive a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 20px 0;
+    padding: 1.3rem 1rem;
+    transition: 0.4s;
+    border: solid 0px var(--bg-color-01); 
+}
+
+.nav a:hover, .nav-responsive:hover {
+    color: var(--main-color);
+}
+
+section {
+    min-height: 40vw;
+    padding: 6rem 6rem 2rem;
+
+    border: solid 1px var(--bg-color-01);
+}
+
+span {
+    color: var(--main-color);
+}
+
+/*HOME E ABOUT*/
+
+.home, .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home-img, .about-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid #444;
+    box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
+}
+
+.home-img img, .about-img img {
+    height: 100%;
+    width:100%;
+    transition: 0.5s;
+}
+
+.home-container h1, .about-container h1 {
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-container h3, .about-container h3 {
+    font-weight: 700;
+    text-align: left;
+}
+
+.home-container, .about-container {
+    width: 45%;
+    margin-top: 1.2rem;
+    text-align: left;
+}
+
+.home-container p, .about-container p {
+    margin-top: 1.2rem;
+    text-align:left;
+}
+
+.about-container {
+    max-width: 600px; /* Limita a largura do texto */
+    margin: flex; /* Centraliza o conteúdo */
+    text-align: justify; /* Justifica o texto para melhor leitura */
+}
+
+/*REDES SOCIAIS (HOME)*/
+.social-media img {
+    width: 3.5rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: solid 0.15rem var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 1.8rem 0.5rem;
+    transition: 0.5s ease;
+}
+
+.social-media a:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color-02);
+    box-shadow: 0 0 0.3rem var(--main-color);
+}
+
+/*BUTTON (HOME)*/
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+    color: var(--bg-color-02);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    transition: 0.3s ease;
+    margin-top: 1.2rem;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0.3rem var(--main-color);
+    background-color: inherit;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/*PROJETOS*/
+.projetos {
+    background-color: var(--bg-color-01);
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo, se ajusta ao tamanho da tela */
+    gap: 1.2rem;
+    padding: 1rem; /* Adiciona um espaçamento interno */
+}
+
+.projetos-box {
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem var(--bg-color-01);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Permite organizar o conteúdo em uma coluna */
+    background-color: var(--bg-color-02); /* Cor de fundo variável */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para interatividade */
+}
+
+.projetos-box:hover {
+    transform: scale(1.03); /* Leve aumento no hover */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+.projetos-box img {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.projetos-box img:hover {
+    transform: scale(1.1);
+}
+
+.projetos-box .projetos-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, var(--main-color));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.4rem;
+    transform: translateY(30rem);
+    transition: 0.5s ease;
+
+}
+
+.projetos-box:hover .projetos-layer {
+    transform: translateY(0);
+}
+
+.projetos-layer p {
+    margin: 0.2rem 0 0.5rem;
+}
+
+.projetos-layer h4 {
+    font-size: 1.8rem;
+}
+
+.projetos-layer a {
+    margin: 0.2rem 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.projetos-layer a i {
+    font-size: 1.2rem;
+    color: var(--bg-color-02);
+}
+
+/*CONTACT*/
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .input-box input, form textarea {
+    width: 100%;
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color-02);
+    border-radius: 0.7rem;
+    margin: 0.4rem 0;
+}
+
+form textarea {
+    resize: none;
+}
+
+
+/*menu*/
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--text-color);
+    margin: 0.4rem 0;
+    transition: 0.3s ease;
+}
+
+.change .bar1 {
+    transform: translate(0, 0.65rem) rotate(-40deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, 0.65rem) rotate(-40deg);
+}
+/*menu*/
+/*extra small*/
+@media (max-width: 600px) {
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav-responsive {
+        display: block;
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    section {
+        padding: 6rem 2.5rem;
+    }
+
+    .home, .about {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .home-container, .about-container {
+        width: 30%;
+    }
+
+    .home-container div {
+        text-align: center;
+    }
+
+    .home-container h1, .about-container h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+}
+
+
+/*small: smartphone*/
+@media (min-width: 600px) {
+
+    .projetos-box {
+        width: 70%;
+    }
+}
+
+/*medium: tablet*/
+@media (min-width: 768px) {
+    .menu-hamburguer {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .nav-responsive, .nav-responsive a {
+        display: none;
+    }
+
+    .home,.about {
+        flex-direction: row;
+        gap: 1.6rem;
+    }
+
+    .projetos-container {
+        grid-template-columns: auto auto;
+    }
+
+    form .input-box input {
+        width: 49%;
+    }
+
+    .about-container {
+        flex-direction: row;
+        gap: 1.2rem;
+    }
+}
+
+/*large: notebook*/
+@media (min-width: 992px) {
+
+    .projetos-container {
+        flex-direction: row;
+        gap: 1.2rem;
+    }
+}
+
+/*extra large: desktop*/
+@media (min-width: 1200px) {
+
+    .home-container h1 {
+        font-size: 2.7rem;
+    }
+
+    .home-container h3 {
+        font-size: 2rem;
+    }
+
+    .projetos-container {
+        grid-template-columns: auto auto;
+    }
+}
